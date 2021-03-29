@@ -1,10 +1,10 @@
-// FUNCTION IMPLEMENTATION
+// ASSERT EQUAL FUNCTION
 
 const assertEqual = function(actual, expected) {
   if (actual !== expected) {
-    console.log(`😡 Assertion Failed: ${actual} !== ${expected}`);
+    return `😡 Assertion Failed: ${actual} !== ${expected}`;
   } else if (actual === expected) {
-    console.log(`👍 Assertion Passed: ${actual} === ${expected}`);
+    return `👍 Assertion Passed: ${actual} === ${expected}`;
   }
 };
 
@@ -12,17 +12,17 @@ const assertEqual = function(actual, expected) {
 
 console.log("-------");
 console.log("Identical strings");
-assertEqual("lunch", "lunch");
+console.log(assertEqual("lunch", "lunch"));
 console.log("-------");
 
 console.log("Non-identical strings");
-assertEqual("Lighthouse Labs", "Bootcamp");
+console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
 console.log("-------");
 
 console.log("Identical numbers");
-assertEqual(1, 1);
+console.log(assertEqual(1, 1));
 console.log("-------");
 
 console.log("Non-identical numbers");
-assertEqual(132, 456);
+console.log(assertEqual(132, 456));
 console.log("-------");
