@@ -23,53 +23,69 @@ const assertArraysEqual = function(arr1, arr2) {
   }
 };
 
-// WITHOUT FUNCTION
+// WITHOUT FUNCTION 1.0
 
-const without = function(sourceArr, itemsToRemoveArr) {
-  // create a variable called newArr to store the new array
+// const without = function(sourceArr, itemsToRemoveArr) {
+//   // create a variable called newArr to store the new array
   
+//   // loop over itemsToRemoveArr
 
-  // loop over itemsToRemoveArr
-
-  // create a variable called itemToRemove store the value at index 0
-  for (let itemToRemove of itemsToRemoveArr) {
-    let newArr = [];
+//   // create a variable called itemToRemove store the value at index 0
+//   for (let itemToRemove of itemsToRemoveArr) {
+//     let newArr = [];
     
-    // console.log (itemToRemove) // works, returns 1
+//     // console.log (itemToRemove) // works, returns 1
     
-    // create another loop (nested)
-    for (let sourceItem of sourceArr) {
+//     // create another loop (nested)
+//     for (let sourceItem of sourceArr) {
       
       
-      // console.log(sourceItem) // works, returns 1 2 3
+//       // console.log(sourceItem) // works, returns 1 2 3
     
-      // create a conditonal: if itemToRemove matches any value in sourceArr
-      if (itemToRemove !== sourceItem) {
-        console.log(sourceItem)
-        // push that value into newArr
+//       // create a conditonal: if itemToRemove matches any value in sourceArr
+//       if (itemToRemove === sourceItem) {
+//         console.log(sourceItem)
         
-        for (let newArrItem of newArr) {
-          if (sourceItem !== newArrItem) {
-            // console.log(newArrItem)
-            newArr.push(sourceItem);
-          }
-        }
+//         // push that value into newArr
+        
+//         // for (let newArrItem of newArr) {
+//         //   if (sourceItem !== newArrItem) {
+//         //     // console.log(newArrItem)
+//         //     newArr.push(sourceItem);
+//         //   }
+//         // }
         
         
-      }return newArr;
-    } 
-  } 
-  // return newArr
-  
-};
+//       } else {
+//         newArr.push(sourceItem);
+//       }
+//       return newArr;
+//     } 
+//   } 
+//   // return newArr
+// };
+
+// WITHOUT FUNCTION 2.0
+
+const without = function(source, itemsToRemove) {
+  let withoutArr = []
+  let withoutNum = ""
+  for (let i = 0; i < source.length; i++) {
+    if (!itemsToRemove.includes(source[i])) {
+      withoutNum = source[i]
+      withoutArr.push(withoutNum);
+    }
+  }
+  return withoutArr;
+}
 
 
 // TEST CODE
 
-// console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without([1, 2, 3], [1])); // => [2, 3]
 console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
-// const words = ["hello", "world", "lighthouse"];
-// console.log(without(words, ["lighthouse"])); // no need to capture return value for this test case
-// // Make sure the original array was not altered by the without function
-// assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+const words = ["hello", "world", "lighthouse"];
+console.log(without(words, ["lighthouse"])); // no need to capture return value for this test case
+// Make sure the original array was not altered by the without function
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);
