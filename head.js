@@ -1,3 +1,7 @@
+// REQUIRE
+
+const assertEqual = require("./assertEqual");
+
 // HEAD FUNCTION
 
 const head = function(array) {
