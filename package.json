@@ -1,7 +1,7 @@
 {
-  "name": "lotide2",
+  "name": "@awongpro/lotide2",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/beepsboops/lotide2.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "A Wong",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/beepsboops/lotide2/issues"
